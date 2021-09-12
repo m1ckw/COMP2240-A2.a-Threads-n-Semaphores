@@ -30,22 +30,19 @@ public class A2 {
                 String[] lilChunk = bigChunk.split("=");
                 String direction = lilChunk[0];
                 int number = Integer.parseInt(lilChunk[1]);
-                
                 for (int i=0; i<number; i++) {
                     warUnit++;
                     WAR war = new WAR(warUnit, direction, intersection);
                     waitingWars.add(war);
                 }
-                System.out.println("From Direction: " + direction + ", Number: " + number); // CHECK STATMENT - DELETE WHEN DONE
             } 
         } catch (IOException e) {
             e.printStackTrace();
         }
         
-        printWarCrew(); // CHECK STATEMENT DELETE WHEN DONE.
+        printWarCrew(); // Prints initial positions.
 
-
-        System.out.println(ThreadColour.ANSI_RESET + "\nStarting The process..");
+        System.out.println(ThreadColour.ANSI_RESET + "\nStarting the threads..");
         for (int i=0; i<waitingWars.size(); i++) {
             Thread t = new Thread(waitingWars.peek()); // Thread WAR01 = new Thread( );
             t.start();
@@ -53,7 +50,7 @@ public class A2 {
         }  
     }
 
-    // Prints initial positions to check upload.
+    // Prints initial positions to verify that the data was uploaded correctly.
     public static void printWarCrew() {
         int size = waitingWars.size();
         System.out.println(ThreadColour.ANSI_RESET +"\nWAR Crew before starting the process.");
