@@ -1,4 +1,5 @@
 # COMP2240_A2.a
+# Threads & Semaphores. 
 
 WARs are simple robots which repeatedly travel back and forth in the same track, being ‘Loaded’ in their trip from Storage to Dock and return ‘Unloaded’ in the return trip. 
 Each WAR has a unique number for identification but its status changes between ‘Loaded’ and ‘Unloaded’ from trip to trip. 
