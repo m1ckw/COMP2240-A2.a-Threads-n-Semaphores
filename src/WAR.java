@@ -68,18 +68,6 @@ public class WAR implements Runnable {
         while((CrossCount.getT1Crossings() < 150) && (CrossCount.getT2Crossings() < 150)) {
             printUpdate();
             try {
-                printUpdate();
-                // Below if & if else are inplace to ensure even use of each track 1 & 2. If removed,
-                // each WAR gets equal access and if more WARs are on one track then that track is used more. 
-                if ((CrossCount.getT1Crossings() < CrossCount.getT2Crossings()) 
-                    && (getDestination().equals(S2) || getDestination().equals(D2))) {
-                    Thread.sleep(3000);
-                    printUpdate();
-                } else if ((CrossCount.getT1Crossings() > CrossCount.getT2Crossings()) 
-                    && (getDestination().equals(S1) || getDestination().equals(D1))) {
-                    Thread.sleep(3000);
-                    printUpdate();
-                }
                 // intersection = semaphore - Entering Critical Section.
                 intersection.acquire(1);
                 try {
